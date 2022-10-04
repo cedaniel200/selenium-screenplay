@@ -1,6 +1,6 @@
 package com.cedaniel200.github.screenplay;
 
-import com.cedaniel200.github.util.DriverFactory;
+import com.cedaniel200.github.screenplay.utils.DriverFactory;
 
 import java.util.Arrays;
 
@@ -24,4 +24,8 @@ public class Actor {
         Arrays.stream(actions).forEach(action -> action.perform(DriverFactory.getDriver()));
     }
 
+    public void shouldSeeThat(Question question) {
+        if(!question.answer(DriverFactory.getDriver()))
+            throw new AssertionError();
+    }
 }
