@@ -5,7 +5,7 @@ import org.openqa.selenium.support.FindBy;
 
 public class HomePage {
 
-    @FindBy(linkText = "New")
+    @FindBy(xpath = "//loading-context//h2/a")
     public WebElement newRepository;
     @FindBy(id = "dashboard")
     public WebElement dashboard;

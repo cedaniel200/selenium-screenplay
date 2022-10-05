@@ -2,7 +2,7 @@ package com.cedaniel200.github.interactions;
 
 import com.cedaniel200.github.model.GitIgnore;
 import com.cedaniel200.github.model.License;
-import com.cedaniel200.github.screenplay.Action;
+import com.cedaniel200.automation.screenplay.actions.Action;
 import com.cedaniel200.github.userinterfaces.CreateNewRepositoryPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -41,13 +41,13 @@ public class SelectDropDownButton implements Action {
     }
 
     @Override
-    public void perform(WebDriver driver) {
-        init(driver);
+    public void perform(WebDriver browser) {
+        init(browser);
 
         button.click();
         filter.sendKeys(valueFilter);
 
-        WebElement selectedItem = driver.findElement(By.xpath(cssSelectorForElementSelected));
+        WebElement selectedItem = browser.findElement(By.xpath(cssSelectorForElementSelected));
         await().forever().pollInterval(1, SECONDS).until(isNotNull(selectedItem));
         selectedItem.click();
     }

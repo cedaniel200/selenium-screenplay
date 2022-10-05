@@ -29,10 +29,10 @@ public class CreateNewRepositoryPage {
     @FindBy(xpath = "//input[@aria-label = 'License']")
     public WebElement filterLicense;
 
-    @FindBy(xpath = "div.js-with-permission-fields > .btn-primary")
+    @FindBy(css = "div.js-with-permission-fields > .btn-primary")
     public WebElement createRepository;
 
-    @FindBy(xpath = ".error > strong")
+    @FindBy(css = ".error > strong")
     public WebElement messageRepositoryAlreadyExists;
 
 }

@@ -1,6 +1,6 @@
 package com.cedaniel200.github.tasks;
 
-import com.cedaniel200.github.screenplay.Action;
+import com.cedaniel200.automation.screenplay.actions.Action;
 import com.cedaniel200.github.model.User;
 import com.cedaniel200.github.userinterfaces.LoginPage;
 import org.openqa.selenium.WebDriver;
@@ -16,8 +16,8 @@ public class Authenticator implements Action {
     }
 
     @Override
-    public void perform(WebDriver driver) {
-        initPages(driver);
+    public void perform(WebDriver browser) {
+        initPages(browser);
 
         loginPage.username.sendKeys(user.getUsername());
         loginPage.password.sendKeys(user.getPasswork());

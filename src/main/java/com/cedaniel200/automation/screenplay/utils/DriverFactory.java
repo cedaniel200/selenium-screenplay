@@ -1,4 +1,4 @@
-package com.cedaniel200.github.screenplay.utils;
+package com.cedaniel200.automation.screenplay.utils;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;

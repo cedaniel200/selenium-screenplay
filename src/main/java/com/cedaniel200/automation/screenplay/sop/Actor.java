@@ -1,6 +1,8 @@
-package com.cedaniel200.github.screenplay;
+package com.cedaniel200.automation.screenplay.sop;
 
-import com.cedaniel200.github.screenplay.utils.DriverFactory;
+import com.cedaniel200.automation.screenplay.actions.Action;
+import com.cedaniel200.automation.screenplay.Question;
+import com.cedaniel200.automation.screenplay.utils.DriverFactory;
 
 import java.util.Arrays;
 

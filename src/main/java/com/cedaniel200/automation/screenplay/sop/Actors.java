@@ -1,4 +1,4 @@
-package com.cedaniel200.github.screenplay;
+package com.cedaniel200.automation.screenplay.sop;
 
 import java.util.HashMap;
 
