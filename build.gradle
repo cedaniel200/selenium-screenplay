@@ -39,6 +39,7 @@ tasks.named('test') {
     systemProperty 'base.url', System.getProperty('base.url', 'https://www.saucedemo.com')
     systemProperty 'webdriver.driver', System.getProperty('webdriver.driver', 'chrome')
     systemProperty 'headless', System.getProperty('headless', 'true')
+    systemProperty 'webdriver.remote.url', System.getenv('WEBDRIVER_REMOTE_URL') ?: System.getProperty('webdriver.remote.url', '')
     testLogging {
         events 'passed', 'failed', 'skipped'
         exceptionFormat = 'full'

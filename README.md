@@ -51,6 +51,22 @@ El informe queda en:
 target/cucumber-reports/index.html
 ```
 
+## Docker
+
+La suite también corre contra Selenium Grid en contenedores:
+
+```sh
+docker compose up --abort-on-container-exit
+```
+
+| Servicio | Rol |
+|---|---|
+| `selenium` | `selenium/standalone-chrome` con Chrome |
+| `tests` | JDK 17 que ejecuta Gradle y se conecta a Selenium |
+
+El informe queda en `target/cucumber-reports/index.html`. En Mac ARM, la imagen de Selenium puede
+ejecutarse bajo emulación.
+
 ## Estructura
 
 ```text
