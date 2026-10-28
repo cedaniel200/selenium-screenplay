@@ -1,17 +1,19 @@
 package com.cedaniel200.automation.screenplay.sop;
 
 import java.util.HashMap;
+import java.util.Map;
 
 public class Actors {
-    private static HashMap<String, Actor> actorHashMap;
+    private static Map<String, Actor> actors = new HashMap<>();
     private static String lastNameActor = "anonymous";
 
     private Actors() {
     }
 
-    public static Actor theActorCalled(String name){
+    public static Actor theActorCalled(String name) {
         Actor actor = new Actor(name);
-        Actors.registerActor(actor);
+        registerActor(actor);
+        onStage(name);
         return actor;
     }
 
@@ -19,20 +21,16 @@ public class Actors {
         lastNameActor = name;
     }
 
-    public static void registerActor(Actor actor){
-        createHashMapIfRequired();
-        actorHashMap.put(actor.getName(), actor);
+    public static void registerActor(Actor actor) {
+        actors.put(actor.getName(), actor);
     }
 
-    public static Actor theActorInTheSpotlight(){
-        createHashMapIfRequired();
-        return actorHashMap.get(lastNameActor);
+    public static Actor theActorInTheSpotlight() {
+        return actors.get(lastNameActor);
     }
 
-    private static void createHashMapIfRequired() {
-        if(actorHashMap == null){
-            actorHashMap = new HashMap<>();
-        }
+    public static void reset() {
+        actors = new HashMap<>();
+        lastNameActor = "anonymous";
     }
-
 }
