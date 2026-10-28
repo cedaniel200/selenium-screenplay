@@ -34,7 +34,7 @@ public class PurchaseSteps {
     @When("Cesar completa el checkout con sus datos")
     public void completeCheckout() {
         theActorInTheSpotlight().attemptsTo(
-                CompleteCheckout.with(new Customer("Cesar", "Daniel", "110111"))
+                CompleteCheckout.with(Customer.withData("Cesar", "Daniel", "110111"))
         );
     }
 

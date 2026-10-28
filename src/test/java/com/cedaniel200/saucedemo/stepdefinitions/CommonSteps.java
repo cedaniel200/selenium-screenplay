@@ -39,14 +39,14 @@ public class CommonSteps {
     @When("Cesar inicia sesión como usuario estándar")
     public void signInAsStandardUser() {
         theActorInTheSpotlight().attemptsTo(
-                Authenticate.with(new User("standard_user", "secret_sauce"))
+                Authenticate.with(User.withCredentials("standard_user", "secret_sauce"))
         );
     }
 
     @When("Cesar inicia sesión como usuario bloqueado")
     public void signInAsLockedUser() {
         theActorInTheSpotlight().attemptsTo(
-                Authenticate.with(new User("locked_out_user", "secret_sauce"))
+                Authenticate.with(User.withCredentials("locked_out_user", "secret_sauce"))
         );
     }
 

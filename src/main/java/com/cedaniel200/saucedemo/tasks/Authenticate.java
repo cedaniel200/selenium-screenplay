@@ -16,8 +16,8 @@ public class Authenticate implements Action {
     @Override
     public void perform(WebDriver browser) {
         LoginPage loginPage = new LoginPage(browser);
-        loginPage.username.sendKeys(user.getUsername());
-        loginPage.password.sendKeys(user.getPassword());
+        loginPage.username.sendKeys(user.username());
+        loginPage.password.sendKeys(user.password());
         loginPage.loginButton.click();
     }
 

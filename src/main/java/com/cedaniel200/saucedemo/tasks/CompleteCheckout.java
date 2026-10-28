@@ -27,11 +27,11 @@ public class CompleteCheckout implements Action {
         Wait.inThis(browser).until(visibilityOf(checkoutPage.firstName));
 
         checkoutPage.firstName.click();
-        checkoutPage.firstName.sendKeys(customer.getFirstName());
+        checkoutPage.firstName.sendKeys(customer.firstName());
         checkoutPage.lastName.click();
-        checkoutPage.lastName.sendKeys(customer.getLastName());
+        checkoutPage.lastName.sendKeys(customer.lastName());
         checkoutPage.postalCode.click();
-        checkoutPage.postalCode.sendKeys(customer.getPostalCode());
+        checkoutPage.postalCode.sendKeys(customer.postalCode());
         checkoutPage.continueButton.click();
         Wait.inThis(browser).until(elementToBeClickable(checkoutPage.finishButton)).click();
     }
