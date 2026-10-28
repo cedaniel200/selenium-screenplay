@@ -3,26 +3,18 @@ package com.cedaniel200.automation.screenplay.utils;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class Wait implements Cloneable {
+import java.time.Duration;
 
-    private static WebDriverWait webDriverWait;
+public class Wait {
 
-    public static WebDriverWait onlyInThis (WebDriver driver){
-        return new WebDriverWait(driver, 10L);
+    private Wait() {
     }
 
-    public static synchronized WebDriverWait inThisNew(WebDriver driver){
-        webDriverWait = new WebDriverWait(driver, 10L);
-        return webDriverWait;
+    public static WebDriverWait inThis(WebDriver driver) {
+        return new WebDriverWait(driver, Duration.ofSeconds(10));
     }
 
-    public static synchronized WebDriverWait inCurrentBrowser(){
-        if(webDriverWait == null) webDriverWait = new WebDriverWait(DriverFactory.getDriver(), 10L);
-        return webDriverWait;
-    }
-
-    @Override
-    public Object clone() throws CloneNotSupportedException {
-        throw new CloneNotSupportedException();
+    public static WebDriverWait inCurrentBrowser() {
+        return inThis(DriverFactory.getDriver());
     }
 }
